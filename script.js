@@ -5,6 +5,9 @@ const courseList = document.getElementById("course-list");
 const calculateButton = document.getElementById('calculate');
 const modal = document.querySelector('.modal');
 const closeModalBtn = document.querySelector('.close-modal')
+document.querySelector('.clear-btn').addEventListener('click', function () {
+  document.getElementById('course-form').reset();
+})
 
 addCoursesButton.addEventListener("click", function () {
   const newRow = document.createElement("tr");
@@ -104,3 +107,4 @@ closeModalBtn.addEventListener('click', hideModal)
 document.addEventListener('keydown', function (e) {
   if(e.key === "Escape" && !modal.classList.contains('hidden')) hideModal();
 }) 
+
