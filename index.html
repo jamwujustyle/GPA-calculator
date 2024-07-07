@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GPA Calculator</title>
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="script.js" defer />
+    <script src="script.js" defer></script>
   </head>
   <body>
     <div class="container">
@@ -18,12 +18,12 @@
             <th>Grade</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody id="course-list">
           <tr>
             <td><input type="text" placeholder="Math" /></td>
-            <td><input type="text" placeholder="3" /></td>
+            <td><input class="credits" type="text" placeholder="3" /></td>
             <td>
-              <select>
+              <select class="grade">
                 <option>A</option>
                 <option>B+</option>
                 <option>B</option>
@@ -39,12 +39,13 @@
           </tr>
           <tr>
             <td><input type="text" placeholder="English" /></td>
-            <td><input type="text" placeholder="3" /></td>
+            <td><input class="credits" type="text" placeholder="3" /></td>
             <td>
-              <select>
-                <option>A</option>
-                <option>B+</option>
+              <select class="grade">
                 <option>B</option>
+                <option>A</option>
+                <option>A-</option>
+                <option>B+</option>
                 <option>B-</option>
                 <option>C+</option>
                 <option>C</option>
@@ -57,10 +58,30 @@
           </tr>
           <tr>
             <td><input type="text" placeholder="History" /></td>
-            <td><input type="text" placeholder="2" /></td>
+            <td><input class="credits" type="text" placeholder="2" /></td>
             <td>
-              <select>
+              <select class="grade">
+                <option>C</option>
                 <option>A</option>
+                <option>A-</option>
+                <option>B+</option>
+                <option>B-</option>
+                <option>B</option>
+                <option>C+</option>
+                <option>C-</option>
+                <option>D+</option>
+                <option>D</option>
+                <option>F</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+            <td><input type="text" placeholder="Course" /></td>
+            <td><input class="credits" type="text" placeholder="Credits" /></td>
+            <td>
+              <select class="grade">
+                <option>A</option>
+                <option>A-</option>
                 <option>B+</option>
                 <option>B</option>
                 <option>B-</option>
@@ -74,31 +95,12 @@
             </td>
           </tr>
           <tr>
-            <td><input type="text" placeholder="" /></td>
-            <td><input type="text" placeholder="" /></td>
+            <td><input type="text" placeholder="Course" /></td>
+            <td><input class="credits" type="text" placeholder="Credits" /></td>
             <td>
-              <select>
-                <option>-</option>
+              <select class="grade">
                 <option>A</option>
-                <option>B+</option>
-                <option>B</option>
-                <option>B-</option>
-                <option>C+</option>
-                <option>C</option>
-                <option>C-</option>
-                <option>D+</option>
-                <option>D</option>
-                <option>F</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
-            <td><input type="text" placeholder="" /></td>
-            <td><input type="text" placeholder="" /></td>
-            <td>
-              <select>
-                <option>-</option>
-                <option>A</option>
+                <option>A-</option>
                 <option>B+</option>
                 <option>B</option>
                 <option>B-</option>
@@ -114,9 +116,13 @@
         </tbody>
       </table>
       <a href="#" class="add-course-link">+ add more courses</a>
-      <button type="button">Calculate</button>
+      <button id="calculate" type="button">Calculate</button>
       <button type="button" class="clear-btn">Clear</button>
-      <a href="#" class="settings-link">Settings</a>
     </div>
+    <div class="modal hidden">
+      <button class="close-modal">&times;</button>
+      <p class="modal-content"></p>
+    </div>
+    
   </body>
 </html>
